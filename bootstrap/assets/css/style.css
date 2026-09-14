@@ -70,6 +70,22 @@ footer a:focus,
   color: var(--accent) !important;
 }
 
+.version-switch {
+  display: inline-block;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  color: var(--text);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.version-switch:hover,
+.version-switch:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .hero-section {
   background: var(--page-bg);
 }
@@ -98,6 +114,20 @@ footer {
 .summary-detail {
   color: var(--muted);
   line-height: 1.75;
+}
+
+.about-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.about-link:hover,
+.about-link:focus-visible {
+  color: var(--accent-hover);
+  text-decoration: underline;
 }
 
 .section-title {

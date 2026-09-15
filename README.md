@@ -45,3 +45,5 @@ Durante o desenvolvimento, o modo de observação pode ser iniciado com `npm run
 ## GitHub Pages
 
 O projeto utiliza apenas arquivos estáticos, caminhos relativos e dependências de execução disponíveis no navegador. Por isso, está preparado para publicação pelo GitHub Pages.
+
+Acesse a página publicada em: https://mvk999.github.io/proWebPortifolio/

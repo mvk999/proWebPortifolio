@@ -28,8 +28,9 @@
           <ul class="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-2">
             <li><a class="nav-link" href="#inicio">Início</a></li>
             <li><a class="nav-link" href="#sobre">Sobre</a></li>
-            <li><a class="nav-link" href="#formacao">Formação</a></li>
+            <li><a class="nav-link" href="#experiencias">Experiências</a></li>
             <li><a class="nav-link" href="#projetos">Projetos</a></li>
+            <li><a class="nav-link" href="#formacao">Formação</a></li>
             <li><a class="nav-link" href="#contato">Contato</a></li>
             <li><a class="version-switch" href="../" aria-label="Voltar ao menu de seleção da versão">Escolher versão</a></li>
           </ul>
@@ -41,7 +42,7 @@
   <main id="conteudo">
     <section id="inicio" class="border-b border-slate-200 dark:border-slate-700" aria-labelledby="titulo-inicio">
       <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div class="grid items-center gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(16rem,1fr)]">
+        <div class="grid items-center gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(16rem,.75fr)]">
           <div>
             <p class="eyebrow mb-3">Página pessoal</p>
             <p class="mb-2 text-lg text-slate-600 dark:text-slate-300">Olá, meu nome é</p>
@@ -54,13 +55,19 @@
               <a class="button-link" href="#contato">Contato</a>
             </div>
           </div>
-          <div class="border-l-2 border-slate-200 pl-6 dark:border-slate-700 lg:pl-6">
+          <div>
+            <figure class="profile-portrait">
+              <img src="https://github.com/mvk999.png?size=700" alt="Foto de Marcos Vinícius Pereira" width="700" height="700">
+              <figcaption>Marcos Vinícius Pereira<br><span>Ciência da Computação · UFLA</span></figcaption>
+            </figure>
+            <div class="hero-summary mt-6 border-t-2 border-slate-200 pt-5 dark:border-slate-700 lg:border-l-2 lg:border-t-0 lg:pl-6 lg:pt-0">
             <p class="eyebrow mb-3">Formação atual</p>
             <p class="mb-1 text-lg font-semibold text-slate-900 dark:text-white">Ciência da Computação</p>
             <p class="mb-1 leading-7 text-slate-600 dark:text-slate-300">6º período</p>
             <p class="mb-0 leading-7 text-slate-600 dark:text-slate-300">Universidade Federal de Lavras — UFLA</p>
           </div>
         </div>
+      </div>
       </div>
     </section>
 
@@ -76,14 +83,41 @@
       </div>
     </section>
 
-    <section id="formacao" class="border-b border-slate-200 dark:border-slate-700" aria-labelledby="titulo-formacao">
+    <section id="experiencias" class="border-b border-slate-200 dark:border-slate-700" aria-labelledby="titulo-experiencias">
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div class="grid gap-4 md:grid-cols-[minmax(12rem,1fr)_minmax(0,2fr)] md:gap-8">
-          <h2 id="titulo-formacao" class="section-title">Formação</h2>
-          <div>
-            <h3 class="mb-2 text-xl font-semibold text-slate-900 dark:text-white">Ciência da Computação</h3>
-            <p class="mb-1 text-slate-700 dark:text-slate-200">Universidade Federal de Lavras — UFLA</p>
-            <p class="mb-0 leading-7 text-slate-600 dark:text-slate-300">6º período</p>
+          <h2 id="titulo-experiencias" class="section-title">Experiências profissionais</h2>
+          <div class="experience-list">
+            <article class="experience-item">
+              <div class="experience-heading">
+                <div>
+                  <p class="experience-company">Projeto IMA / UFLA</p>
+                  <h3>Desenvolvedor de Sistemas I</h3>
+                </div>
+                <p class="experience-period">ago. 2026 — atual</p>
+              </div>
+              <p>Desenvolvimento e evolução de um módulo de framework em Java, com integração aos componentes existentes e manutenção do código com foco em reutilização, legibilidade e evolução do sistema.</p>
+            </article>
+            <article class="experience-item">
+              <div class="experience-heading">
+                <div>
+                  <p class="experience-company">Projeto IMA / UFLA</p>
+                  <h3>Bolsista em Qualidade de Software e Automação de Testes</h3>
+                </div>
+                <p class="experience-period">jun. 2025 — jul. 2026</p>
+              </div>
+              <p>Desenvolvimento backend em Java, APIs REST e integrações entre módulos, além de testes automatizados com Zettalenium e atuação com Git, code review e integração contínua.</p>
+            </article>
+            <article class="experience-item">
+              <div class="experience-heading">
+                <div>
+                  <p class="experience-company">Comp Júnior</p>
+                  <h3>Gerente de Projetos e Qualidade</h3>
+                </div>
+                <p class="experience-period">fev. 2025 — jan. 2026</p>
+              </div>
+              <p>Atuação em projetos backend, acompanhando demandas e validações técnicas, com contribuição em revisão de código, documentação e padronização de processos.</p>
+            </article>
           </div>
         </div>
       </div>
@@ -93,7 +127,21 @@
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div class="grid gap-4 md:grid-cols-[minmax(12rem,1fr)_minmax(0,2fr)] md:gap-8">
           <h2 id="titulo-projetos" class="section-title">Projetos</h2>
-          <div class="grid gap-4 sm:grid-cols-2">
+          <div class="project-carousel" data-project-carousel aria-roledescription="carrossel" aria-label="Projetos selecionados">
+            <div class="project-stage">
+              <div class="project-index" data-project-index>01 / 05</div>
+              <article class="project-card" data-project-card aria-live="polite"></article>
+            </div>
+            <div class="carousel-controls">
+              <div class="carousel-dots" data-project-dots aria-label="Selecionar projeto"></div>
+              <div class="carousel-buttons">
+                <button class="carousel-button" type="button" data-project-prev aria-label="Projeto anterior">←</button>
+                <button class="carousel-button" type="button" data-project-next aria-label="Próximo projeto">→</button>
+              </div>
+            </div>
+            <p class="carousel-hint">Use as setas para navegar pelos projetos</p>
+          </div>
+          <div class="legacy-projects grid gap-4 sm:grid-cols-2">
             <article class="project-card">
               <p class="project-meta">JavaScript</p>
               <h3>LocalCast</h3>
@@ -124,6 +172,19 @@
               <p>Jogo de cobrinha desenvolvido para a disciplina GAC116 — Programação Web.</p>
               <a href="https://github.com/mvk999/progWebJogo" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a>
             </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formacao" class="border-b border-slate-200 dark:border-slate-700" aria-labelledby="titulo-formacao">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+        <div class="grid gap-4 md:grid-cols-[minmax(12rem,1fr)_minmax(0,2fr)] md:gap-8">
+          <h2 id="titulo-formacao" class="section-title">Formação</h2>
+          <div>
+            <h3 class="mb-2 text-xl font-semibold text-slate-900 dark:text-white">Ciência da Computação</h3>
+            <p class="mb-1 text-slate-700 dark:text-slate-200">Universidade Federal de Lavras — UFLA</p>
+            <p class="mb-0 leading-7 text-slate-600 dark:text-slate-300">6º período</p>
           </div>
         </div>
       </div>

@@ -20,6 +20,44 @@
     });
   }
 
+  const projects = [
+    { meta: "JavaScript", name: "LocalCast", description: "Espelhamento de tela do notebook para o navegador de uma Smart TV, somente pela rede local.", url: "https://github.com/mvk999/localcast" },
+    { meta: "Jupyter Notebook", name: "ProjetoGrafos", description: "Trabalho prático final de Algoritmos em Grafos com roteamento sob restrições de capacidade (CARP).", url: "https://github.com/mvk999/ProjetoGrafos" },
+    { meta: "JavaScript", name: "Vought Tech", description: "E-commerce voltado para a venda de produtos tecnológicos, desenvolvido no projeto EngSoftware.", url: "https://github.com/mvk999/EngSoftware" },
+    { meta: "JavaScript", name: "API Rhaegal", description: "API para gerenciamento de membros, orçamentos e clientes, desenvolvida para o desafio de backend da Comp Júnior 2025.1.", url: "https://github.com/mvk999/zeus-backend" },
+    { meta: "HTML · CSS · JavaScript", name: "Code Snake", description: "Jogo de cobrinha desenvolvido para a disciplina GAC116 — Programação Web.", url: "https://github.com/mvk999/progWebJogo" }
+  ];
+
+  function setupProjectCarousel() {
+    const carousel = document.querySelector("[data-project-carousel]");
+    if (!carousel) return;
+    const card = carousel.querySelector("[data-project-card]");
+    const index = carousel.querySelector("[data-project-index]");
+    const dots = carousel.querySelector("[data-project-dots]");
+    let current = 0;
+
+    projects.forEach((project, projectIndex) => {
+      const dot = document.createElement("button");
+      dot.className = "carousel-dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Ver projeto ${projectIndex + 1}: ${project.name}`);
+      dot.addEventListener("click", () => render(projectIndex));
+      dots.append(dot);
+    });
+
+    function render(nextIndex) {
+      current = (nextIndex + projects.length) % projects.length;
+      const project = projects[current];
+      card.innerHTML = `<p class="project-meta">${project.meta}</p><h3>${project.name}</h3><p>${project.description}</p><a href="${project.url}" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a>`;
+      index.textContent = `${String(current + 1).padStart(2, "0")} / ${String(projects.length).padStart(2, "0")}`;
+      dots.querySelectorAll(".carousel-dot").forEach((dot, dotIndex) => dot.classList.toggle("is-active", dotIndex === current));
+    }
+
+    carousel.querySelector("[data-project-prev]").addEventListener("click", () => render(current - 1));
+    carousel.querySelector("[data-project-next]").addEventListener("click", () => render(current + 1));
+    render(0);
+  }
+
   function setupMobileMenu() {
     const menuButton = document.querySelector("[data-menu-toggle]");
     const menu = document.querySelector("[data-menu-toggle] + [id]");
@@ -45,6 +83,7 @@
   applyTheme(getTheme());
 
   document.addEventListener("DOMContentLoaded", () => {
+    setupProjectCarousel();
     document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
       button.addEventListener("click", () => {
         const nextTheme = document.documentElement.classList.contains("dark") ? "light" : "dark";

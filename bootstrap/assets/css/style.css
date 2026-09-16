@@ -90,6 +90,56 @@ footer a:focus,
   background: var(--page-bg);
 }
 
+.hero-section h1,
+.section-title {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.profile-portrait {
+  position: relative;
+  width: min(100%, 17rem);
+  margin: 0 auto;
+  padding: 0 0 1rem 1rem;
+}
+
+.profile-portrait::before {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  z-index: 0;
+  width: calc(100% - 1rem);
+  aspect-ratio: 1;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  content: "";
+}
+
+.profile-portrait img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  aspect-ratio: 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.profile-portrait figcaption {
+  position: relative;
+  z-index: 2;
+  width: max-content;
+  max-width: 100%;
+  margin: -2.5rem 0 0 -1rem;
+  padding: .7rem 1rem;
+  background: color-mix(in srgb, var(--accent) 11%, var(--surface));
+  color: var(--text);
+  font-size: .86rem;
+  line-height: 1.4;
+}
+
+.profile-portrait figcaption span { color: var(--muted); }
+
 .content-section,
 footer {
   border-color: var(--border) !important;
@@ -135,6 +185,54 @@ footer {
   font-weight: 650;
 }
 
+.experience-list {
+  border-top: 1px solid var(--border);
+}
+
+.experience-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.experience-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.experience-company {
+  margin: 0 0 .35rem;
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.experience-item h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.12rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.experience-period {
+  flex: 0 0 auto;
+  margin: .1rem 0 0;
+  color: var(--muted);
+  font-size: .84rem;
+  white-space: nowrap;
+}
+
+.experience-item > p {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -143,6 +241,20 @@ footer {
   border-radius: 0.5rem;
   background: var(--surface);
 }
+
+.project-carousel { position: relative; }
+.project-stage { position: relative; padding-top: 1.5rem; }
+.project-index { color: var(--accent); font: 700 .78rem/1 system-ui, sans-serif; letter-spacing: .08em; }
+.project-carousel .project-card { min-height: 16rem; margin-top: .75rem; padding: clamp(1.5rem, 4vw, 2.5rem); border-radius: 0; border-top: 3px solid var(--accent); }
+.project-carousel .project-card h3 { font: 500 clamp(2rem, 5vw, 3.4rem)/1.05 Georgia, "Times New Roman", serif; }
+.carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.25rem; }
+.carousel-dots { display: flex; gap: .4rem; }
+.carousel-dot { width: 2rem; height: .22rem; padding: 0; border: 0; background: var(--border); }
+.carousel-dot.is-active { background: var(--accent); }
+.carousel-buttons { display: flex; gap: .5rem; }
+.carousel-button { width: 2.5rem; height: 2.5rem; border: 1px solid var(--border); background: transparent; color: var(--text); font-size: 1.2rem; }
+.carousel-button:hover, .carousel-button:focus-visible { border-color: var(--accent); color: var(--accent); }
+.carousel-hint { margin: .75rem 0 0; color: var(--muted); font-size: .78rem; }
 
 .project-card h3 {
   color: var(--text);
@@ -285,6 +397,11 @@ a {
 }
 
 @media (max-width: 767.98px) {
+  .experience-heading {
+    flex-direction: column;
+    gap: .5rem;
+  }
+
   .hero-summary {
     padding-top: 1.25rem;
     padding-left: 0;

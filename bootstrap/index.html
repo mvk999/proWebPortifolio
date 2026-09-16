@@ -17,11 +17,18 @@
     <nav class="navbar navbar-expand-lg sticky-top border-bottom bg-body" aria-label="Navegação principal">
       <div class="container">
         <a class="navbar-brand fw-semibold" href="#inicio" aria-label="Início — Marcos Vinícius Pereira">MVP</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menu-principal">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <div class="d-flex align-items-center gap-2 order-2 order-lg-3">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Ativar tema escuro" title="Ativar tema escuro">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.7A8.5 8.5 0 0 1 9.3 3.5 8.5 8.5 0 1 0 20.5 14.7Z"></path></svg>
+            <span class="visually-hidden">Alterar tema</span>
+          </button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse order-3 order-lg-2" id="menu-principal">
+          <ul class="navbar-nav mx-lg-auto align-items-lg-center gap-lg-2">
             <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
             <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
             <li class="nav-item"><a class="nav-link" href="#experiencias">Experiências</a></li>
@@ -29,13 +36,6 @@
             <li class="nav-item"><a class="nav-link" href="#formacao">Formação</a></li>
             <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
             <li class="nav-item ms-lg-2"><a class="version-switch" href="../" aria-label="Voltar ao menu de seleção da versão">Escolher versão</a></li>
-            <li class="nav-item ms-lg-2">
-              <button class="theme-toggle" type="button" data-theme-toggle aria-label="Ativar tema escuro" title="Ativar tema escuro">
-                <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
-                <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.7A8.5 8.5 0 0 1 9.3 3.5 8.5 8.5 0 1 0 20.5 14.7Z"></path></svg>
-                <span class="visually-hidden">Alterar tema</span>
-              </button>
-            </li>
           </ul>
         </div>
       </div>

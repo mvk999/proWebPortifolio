@@ -390,6 +390,11 @@
   .carousel-button { width: 2.5rem; height: 2.5rem; border: 1px solid #cbd5e1; background: transparent; color: #1e293b; font-size: 1.2rem; }
   .carousel-button:hover, .carousel-button:focus-visible { border-color: #173b63; color: #173b63; }
   .carousel-hint { margin: .75rem 0 0; color: #475569; font-size: .78rem; }
+  .dark .carousel-dot { background: #475569; }
+  .dark .carousel-dot.is-active { background: #8db5df; }
+  .dark .carousel-button { border-color: #64748b; color: #f8fafc; }
+  .dark .carousel-button:hover, .dark .carousel-button:focus-visible { border-color: #8db5df; background: #1e293b; color: #8db5df; }
+  .dark .carousel-hint { color: #cbd5e1; }
   .legacy-projects { display: none !important; }
 }
 

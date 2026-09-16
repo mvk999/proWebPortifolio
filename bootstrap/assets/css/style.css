@@ -256,6 +256,18 @@ footer {
 .carousel-button:hover, .carousel-button:focus-visible { border-color: var(--accent); color: var(--accent); }
 .carousel-hint { margin: .75rem 0 0; color: var(--muted); font-size: .78rem; }
 
+[data-bs-theme="dark"] .carousel-button {
+  border-color: var(--muted);
+  background: var(--surface);
+  color: var(--text);
+}
+
+[data-bs-theme="dark"] .carousel-button:hover,
+[data-bs-theme="dark"] .carousel-button:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .project-card h3 {
   color: var(--text);
 }

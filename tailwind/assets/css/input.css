@@ -187,6 +187,25 @@
     color: #cbd5e1;
   }
 
+  .about-heading { margin: 0 auto 2.5rem; text-align: center; }
+  .about-heading .section-title { margin-bottom: .5rem; }
+  .about-subtitle { margin: 0; color: #94a3b8; font-size: 1.05rem; }
+  .about-card { width: min(100%, 56rem); margin: 0 auto; padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid #cbd5e1; border-radius: .75rem; background: #ffffff; box-shadow: 0 .75rem 2rem rgb(15 23 42 / 6%); }
+  .dark .about-card { border-color: #475569; background: #1e293b; box-shadow: 0 .75rem 2rem rgb(0 0 0 / 18%); }
+  .about-lead { margin: 0; color: #475569; font-size: 1.05rem; line-height: 1.75; }
+  .dark .about-lead { color: #cbd5e1; }
+  .about-card hr { margin: 1.75rem 0; border: 0; border-top: 1px solid #cbd5e1; opacity: 1; }
+  .dark .about-card hr { border-color: #475569; }
+  .about-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+  .about-fact { min-width: 0; padding-left: 1rem; border-left: 2px solid #cbd5e1; }
+  .dark .about-fact { border-color: #475569; }
+  .about-fact > span { color: #173b63; font-size: .78rem; font-weight: 800; letter-spacing: .08em; }
+  .dark .about-fact > span { color: #8db5df; }
+  .about-fact h3 { margin: .65rem 0 .45rem; color: #1e293b; font-size: 1rem; line-height: 1.35; }
+  .dark .about-fact h3 { color: #f8fafc; }
+  .about-fact p { margin: 0; color: #475569; font-size: .9rem; line-height: 1.55; }
+  .dark .about-fact p { color: #cbd5e1; }
+
   .technology-list {
     display: grid;
     gap: 0;
@@ -586,6 +605,7 @@
 }
 
 @media (max-width: 47.99rem) {
+  .about-facts { grid-template-columns: 1fr; }
   .technology-list li { grid-template-columns: 1fr; gap: .35rem; }
   .experience-heading { flex-direction: column; gap: .5rem; }
 }

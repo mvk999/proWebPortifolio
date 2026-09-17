@@ -196,6 +196,67 @@ footer {
   line-height: 1.75;
 }
 
+.about-heading {
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.about-heading .section-title {
+  margin-bottom: .5rem;
+}
+
+.about-subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.about-card {
+  width: min(100%, 56rem);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: .75rem;
+  background: var(--surface);
+  box-shadow: 0 .75rem 2rem color-mix(in srgb, var(--text) 6%, transparent);
+}
+
+.about-lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.about-card hr {
+  margin: 1.75rem 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+  opacity: 1;
+}
+
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.about-fact {
+  min-width: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--border);
+}
+
+.about-fact > span {
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.about-fact h3 { margin: .65rem 0 .45rem; color: var(--text); font-size: 1rem; line-height: 1.35; }
+.about-fact p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+
 .about-link {
   display: inline-block;
   margin-top: 1rem;
@@ -594,6 +655,8 @@ a {
 }
 
 @media (max-width: 767.98px) {
+  .about-facts { grid-template-columns: 1fr; }
+
   .technology-list li {
     grid-template-columns: 1fr;
     gap: .35rem;

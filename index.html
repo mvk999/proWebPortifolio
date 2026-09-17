@@ -1,31 +1,80 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Página pessoal de Marcos Vinícius Pereira, estudante de Ciência da Computação na Universidade Federal de Lavras.">
-  <title>Página Pessoal — Marcos Vinícius Pereira</title>
+  <title>Portfólio — Marcos Vinícius Pereira</title>
   <link rel="icon" href="bootstrap/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <main class="entry-page">
-    <div class="entry-content">
-      <p class="entry-label">GAC116 — Programação Web</p>
-      <h1>Página Pessoal — Marcos Vinícius Pereira</h1>
-      <p class="entry-description">Este projeto foi desenvolvido em duas versões para a disciplina GAC116 — Programação Web.</p>
-
-      <div class="version-links">
-        <a class="version-link" href="./bootstrap/">
-          <span>Versão Bootstrap</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <a class="version-link" href="./tailwind/">
-          <span>Versão Tailwind</span>
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
+  <header class="site-header">
+    <div class="header-content">
+      <a class="brand" href="./" aria-label="Página inicial — Marcos Vinícius Pereira">MVP <span>/</span></a>
+      <p class="header-context">UFLA · GAC116</p>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Ativar tema claro" title="Ativar tema claro">
+        <span aria-hidden="true">☼</span>
+      </button>
     </div>
+  </header>
+
+  <main class="entry-page">
+    <section class="entry-hero" aria-labelledby="titulo">
+      <img class="profile-avatar" src="https://github.com/mvk999.png?size=240" alt="Foto de Marcos Vinícius Pereira" width="120" height="120">
+      <p class="entry-label">Atividade prática · GAC116 — Programação Web</p>
+      <h1 id="titulo">Portfólio — Marcos Vinícius Pereira</h1>
+      <p class="entry-description">Estudante de Ciência da Computação na Universidade Federal de Lavras (UFLA). Explore abaixo as duas versões equivalentes deste portfólio.</p>
+    </section>
+
+    <section class="version-grid" aria-label="Escolha da versão do portfólio">
+      <article class="version-card version-card-bootstrap">
+        <div class="card-topline"><span class="version-number">Versão 01</span><span class="framework-mark" aria-hidden="true">B</span></div>
+        <h2>Versão Bootstrap</h2>
+        <p>Implementação utilizando Bootstrap 5.3, com componentes responsivos e estilos próprios para apresentar minha trajetória, projetos e formação.</p>
+        <ul>
+          <li>Grid e breakpoints responsivos</li>
+          <li>Componentes nativos do Bootstrap</li>
+          <li>Tema claro e escuro</li>
+        </ul>
+        <a class="version-button" href="./bootstrap/">Acessar versão Bootstrap <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="version-card version-card-tailwind">
+        <div class="card-topline"><span class="version-number">Versão 02</span><span class="framework-mark" aria-hidden="true">≋</span></div>
+        <h2>Versão Tailwind CSS</h2>
+        <p>Implementação equivalente com Tailwind CSS 4, utilizando classes utilitárias e uma folha de estilos própria para manter a mesma identidade.</p>
+        <ul>
+          <li>Classes utilitárias e layout responsivo</li>
+          <li>Suporte ao tema escuro</li>
+          <li>Conteúdo e comportamento equivalentes</li>
+        </ul>
+        <a class="version-button" href="./tailwind/">Acessar versão Tailwind <span aria-hidden="true">→</span></a>
+      </article>
+    </section>
+
+    <p class="entry-footer-note">Marcos Vinícius Pereira · Ciência da Computação · UFLA</p>
   </main>
+
+  <footer>© 2026 Marcos Vinícius Pereira · GAC116 — Programação Web</footer>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const saved = localStorage.getItem('mvp-theme');
+      if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+      const updateToggle = () => {
+        const dark = root.dataset.theme === 'dark';
+        toggle.setAttribute('aria-label', `Ativar tema ${dark ? 'claro' : 'escuro'}`);
+        toggle.setAttribute('title', `Ativar tema ${dark ? 'claro' : 'escuro'}`);
+      };
+      updateToggle();
+      toggle.addEventListener('click', () => {
+        root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('mvp-theme', root.dataset.theme);
+        updateToggle();
+      });
+    })();
+  </script>
 </body>
 </html>

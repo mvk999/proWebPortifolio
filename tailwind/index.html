@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
   <script src="assets/js/main.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="min-w-[320px] bg-slate-50 font-sans text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100">
+<body class="bg-slate-50 font-sans text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <header>
@@ -21,6 +21,7 @@
           <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.7A8.5 8.5 0 0 1 9.3 3.5 8.5 8.5 0 1 0 20.5 14.7Z"></path></svg>
           <span class="sr-only">Alterar tema</span>
         </button>
+        <button class="language-toggle order-2 ml-1 md:order-3" type="button" data-language-toggle aria-label="Mudar idioma para inglês" title="Mudar idioma para inglês">EN</button>
         <button class="order-3 rounded-md border border-slate-300 p-2 text-slate-700 lg:hidden dark:border-slate-600 dark:text-slate-200" type="button" data-menu-toggle aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"></path></svg>
         </button>
@@ -29,6 +30,7 @@
             <li><a class="nav-link" href="#inicio">Início</a></li>
             <li><a class="nav-link" href="#sobre">Sobre</a></li>
             <li><a class="nav-link" href="#experiencias">Experiências</a></li>
+            <li><a class="nav-link" href="#tecnologias">Tecnologias</a></li>
             <li><a class="nav-link" href="#projetos">Projetos</a></li>
             <li><a class="nav-link" href="#formacao">Formação</a></li>
             <li><a class="nav-link" href="#contato">Contato</a></li>
@@ -41,7 +43,7 @@
 
   <main id="conteudo">
     <section id="inicio" class="border-b border-slate-200 dark:border-slate-700" aria-labelledby="titulo-inicio">
-      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-16">
         <div class="grid items-center gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(16rem,.75fr)]">
           <div>
             <p class="eyebrow mb-3">Página pessoal</p>
@@ -123,6 +125,22 @@
       </div>
     </section>
 
+    <section id="tecnologias" class="border-b border-slate-200 dark:border-slate-700" aria-labelledby="titulo-tecnologias">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+        <div class="grid gap-4 md:grid-cols-[minmax(12rem,1fr)_minmax(0,2fr)] md:gap-8">
+          <h2 id="titulo-tecnologias" class="section-title">Tecnologias</h2>
+          <div>
+            <p class="section-text mb-4">Tecnologias presentes na minha formação e nos projetos reunidos neste portfólio.</p>
+            <ul class="technology-list" aria-label="Tecnologias utilizadas">
+              <li><span>Linguagens</span><strong>Java · JavaScript · Python · C++ · Dart</strong></li>
+              <li><span>Desenvolvimento</span><strong>Flutter · SQL · PostgreSQL</strong></li>
+              <li><span>Web</span><strong>HTML · CSS · Bootstrap · Tailwind CSS</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="projetos" class="border-b border-slate-200 dark:border-slate-700" aria-labelledby="titulo-projetos">
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div class="grid gap-4 md:grid-cols-[minmax(12rem,1fr)_minmax(0,2fr)] md:gap-8">
@@ -130,7 +148,7 @@
           <div class="project-carousel" data-project-carousel aria-roledescription="carrossel" aria-label="Projetos selecionados">
             <div class="project-stage">
               <div class="project-index" data-project-index>01 / 05</div>
-              <article class="project-card" data-project-card aria-live="polite"></article>
+              <article class="project-card" data-project-card aria-live="polite" aria-atomic="true"></article>
             </div>
             <div class="carousel-controls">
               <div class="carousel-dots" data-project-dots aria-label="Selecionar projeto"></div>
@@ -143,33 +161,33 @@
           </div>
           <div class="legacy-projects grid gap-4 sm:grid-cols-2">
             <article class="project-card">
-              <p class="project-meta">JavaScript</p>
+              <p class="project-meta">JavaScript · WebRTC</p>
               <h3>LocalCast</h3>
-              <p>Aplicação web para espelhar a tela do notebook no navegador de uma Smart TV pela rede local.</p>
+              <p>Ferramenta de espelhamento em rede local que usa WebRTC e pareamento por PIN para transmitir a tela do notebook ao navegador de uma Smart TV.</p>
               <a href="https://github.com/mvk999/localcast" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a>
             </article>
             <article class="project-card">
-              <p class="project-meta">Jupyter Notebook</p>
-              <h3>ProjetoGrafos</h3>
-              <p>Trabalho final de Algoritmos em Grafos que explora roteamento sob restrições de capacidade no problema CARP.</p>
-              <a href="https://github.com/mvk999/ProjetoGrafos" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a>
+              <p class="project-meta">Python · Jupyter Notebook</p>
+              <h3>Brasileirão Predictor</h3>
+              <p>Projeto de ciência de dados que prepara, valida e explora 1.900 partidas do Campeonato Brasileiro entre 2020 e 2024.</p>
+              <a href="https://github.com/mvk999/brasileirao-predictor" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a>
             </article>
             <article class="project-card">
-              <p class="project-meta">JavaScript</p>
-              <h3>Vought Tech</h3>
-              <p>E-commerce de produtos tecnológicos desenvolvido como parte do projeto EngSoftware.</p>
-              <a href="https://github.com/mvk999/EngSoftware" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a>
+              <p class="project-meta">Java EE · MySQL</p>
+              <h3>Projeto Final Java Web</h3>
+              <p>Aplicação Java web de gestão com operações CRUD, persistência em MySQL e implantação em servidor GlassFish.</p>
+              <a href="https://github.com/mvk999/Projeto-Final-Java" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a>
             </article>
             <article class="project-card">
-              <p class="project-meta">JavaScript</p>
+              <p class="project-meta">JavaScript · Backend</p>
               <h3>API Rhaegal</h3>
-              <p>API backend criada para o desafio da Comp Júnior 2025.1, voltada ao gerenciamento de membros, orçamentos e clientes.</p>
+              <p>API backend desenvolvida para o desafio da Comp Júnior 2025.1, reunindo o gerenciamento de membros, orçamentos e clientes.</p>
               <a href="https://github.com/mvk999/zeus-backend" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a>
             </article>
             <article class="project-card">
               <p class="project-meta">HTML · CSS · JavaScript</p>
               <h3>Code Snake</h3>
-              <p>Jogo de cobrinha desenvolvido para a disciplina GAC116 — Programação Web, com interface e mecânicas próprias.</p>
+              <p>Jogo de cobrinha para a disciplina GAC116 — Programação Web, com controles por teclado, pausas, colisões e reinício de partida.</p>
               <a href="https://github.com/mvk999/progWebJogo" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a>
             </article>
           </div>
@@ -199,11 +217,14 @@
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div class="grid gap-4 md:grid-cols-[minmax(12rem,1fr)_minmax(0,2fr)] md:gap-8">
           <h2 id="titulo-contato" class="section-title">Contato</h2>
-          <dl class="grid gap-5">
-            <div><dt class="mb-1 font-semibold text-slate-900 dark:text-white">E-mail</dt><dd><a class="contact-link" href="mailto:pereiramv2006@gmail.com">pereiramv2006@gmail.com</a></dd></div>
-            <div><dt class="mb-1 font-semibold text-slate-900 dark:text-white">GitHub</dt><dd><a class="contact-link" href="https://github.com/mvk999" target="_blank" rel="noopener noreferrer">github.com/mvk999</a></dd></div>
-            <div><dt class="mb-1 font-semibold text-slate-900 dark:text-white">LinkedIn</dt><dd><a class="contact-link" href="https://www.linkedin.com/in/mvpereira2006/" target="_blank" rel="noopener noreferrer">linkedin.com/in/mvpereira2006</a></dd></div>
-          </dl>
+          <div>
+            <p class="contact-intro">Vamos conversar sobre projetos, tecnologia ou oportunidades de colaboração.</p>
+            <dl class="contact-list">
+              <div><dt>E-mail</dt><dd><a class="contact-link" href="mailto:pereiramv2006@gmail.com">pereiramv2006@gmail.com</a></dd><dd class="contact-detail">Canal direto para contato.</dd></div>
+              <div><dt>LinkedIn</dt><dd><a class="contact-link" href="https://www.linkedin.com/in/mvpereira2006/" target="_blank" rel="noopener noreferrer">linkedin.com/in/mvpereira2006</a></dd><dd class="contact-detail">Perfil profissional e trajetória acadêmica.</dd></div>
+              <div><dt>GitHub</dt><dd><a class="contact-link" href="https://github.com/mvk999" target="_blank" rel="noopener noreferrer">github.com/mvk999</a></dd><dd class="contact-detail">Repositórios e projetos públicos.</dd></div>
+            </dl>
+          </div>
         </div>
       </div>
     </section>
